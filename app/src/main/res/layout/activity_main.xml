@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/Contenedor_Menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/img_logo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:src="@drawable/logo_adivina_disney" />
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="-200dp"
+            android:src="@drawable/logo_adivina_disney"
+            />
+
+        <Button
+            android:id="@+id/btn_jugadorvsia"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/boton_azul"
+            android:fontFamily="@font/fredoka_one"
+            android:onClick="inicarpartidaIA"
+            android:text="Jugador vs IA"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/boton_azul"
+            android:fontFamily="@font/fredoka_one"
+            android:onClick="jugadorvsjugador"
+            android:text="J vs J"
+            android:textSize="20sp" />
+
+        <Button
+            android:visibility="invisible"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/boton_azul"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Como jugar?"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_perfil"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/boton_perfil"
+            android:layout_gravity="right"
+            android:layout_marginTop="110dp"
+            android:layout_marginRight="20dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/Contenedor_Perfil"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/fondo_perfil"
+        android:padding="35dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Perfil:"
+            android:padding="5dp"
+            android:background="#BA039BE5"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:stretchColumns="2">
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Nombre:"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginRight="130dp"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txt_nombre_jugador_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="1234567890"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Estadisticas"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Puntuacion mas Alta:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_puntuacion_alta_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="1500"
+                    android:textAlignment="textEnd"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Ultima puntuacion"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_ultima_puntuacion_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="1500"
+                    android:textAlignment="textEnd"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Victorias:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_victorias_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </TableRow>
+            <TableRow
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Derrotas:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/txt_derrotas_perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/txt_vinculacion"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Vincula tu cuenta de Google, para guardar tu progreso y poder jugar con otros jugadores en linea."
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btn_google"
+            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/boton_google"/>
+
+        <Button
+            android:id="@+id/btn_guardar"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/boton_azul"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Guardar"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btn_cerrar"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/btn_cerrar"
+            android:layout_gravity="right"
+            android:layout_marginTop="180dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

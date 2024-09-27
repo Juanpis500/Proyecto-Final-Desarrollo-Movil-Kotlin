@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/drawable/borde.xml" value="0.403125" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/drawable/custom_button.xml" value="0.403125" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/activity_como_jugar.xml" value="0.3677536231884058" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/activity_inicio.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/activity_jugadorvs_ia.xml" value="0.33" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/activity_jugadorvsjugador.xml" value="0.33" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/activity_prueba.xml" value="0.3582427536231884" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/card_view.xml" value="0.33" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/fragment_login.xml" value="0.3729166666666667" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/fragment_perfil.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/fragment_pistas.xml" value="0.29257246376811596" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/fragment_respuesta.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/fragment_tablero.xml" value="0.2875905797101449" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/layout/insertarnombre.xml" value="0.3867753623188406" />
+        <entry key="..\:/Users/juanp/AndroidStudioProjects/ProyectoFinalAdivinaquien/app/src/main/res/xml/card_flip_left_in.xml" value="0.3161231884057971" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.38697916666666665" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".jugadorvsIA"
+    android:background="@drawable/fondo_juego">
+
+    <LinearLayout
+        android:id="@+id/contenedor_encabezado"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:background="@drawable/boton_regresar"
+            android:onClick="Regresar" />
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/img_foto_perfil"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_gravity="center"
+            android:src="@drawable/mrincreible"
+            />
+
+        <TextView
+            android:id="@+id/txt_nombre_jugador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/fredoka_one"
+            android:text="1234567890"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Puntuacion:"
+                    android:layout_marginBottom="5dp"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14dp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Mas Alta"
+                    android:padding="5dp"
+                    android:background="#AD00E676"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/fredoka_one"
+                    android:background="#FF5252"
+                    android:padding="5dp"
+                    android:text="Ultimo"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/txt_puntuacion_alta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/txt_ultima_puntuacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tit_juego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/fredoka_one"
+        android:text="Jugador vs IA"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/contenedor_Puntuacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Puntuacion Actual:"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"/>
+
+        <TextView
+            android:id="@+id/txt_puntuacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fredoka_one"
+            android:text="1500"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/contener_total"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_respuesta"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/boton_azul"
+                android:fontFamily="@font/fredoka_one"
+                android:text="Respuesta"
+                android:textSize="20sp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/Contenedor_respuesta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:orientation="vertical"
+                >
+                <TableLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="15dp">
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/fredoka_one"
+                            android:text="Lista de personajes"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp" />
+                    </TableRow>
+                    <TableRow>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/fredoka_one"
+                            android:text="1. Ariel \n2. Stitch \n3. Elsa \n4. Sebastian
+                    \n5. Rapunzel \n6. Mickey Mouse \n7. Ana \n8. Winnie Pooh \n9. Mr Increible
+                    \n10. Bambi \n11. Edna \n12. Dumbo"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/fredoka_one"
+                            android:text="13. Mulan \n14. Goofy \n15. Jazmin \n16. Minnie
+                    \n17. Vanellope \n18. Timon \n19. Hercules \n20. Donald \n21. Lilo
+                    \n22. Remi \n23. Campanita \n24. Dory"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+                    </TableRow>
+                </TableLayout>
+
+                <EditText
+                    android:id="@+id/txt_respuesta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fredoka_one"
+                    android:layout_marginHorizontal="15dp"
+                    android:hint="Ingresar personaje"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/btn_confirmar"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boton_azul"
+                    android:fontFamily="@font/fredoka_one"
+                    android:text="Confirmar"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_comenzar"
+                android:layout_width="150dp"
+                android:layout_marginTop="15dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/boton_azul"
+                android:fontFamily="@font/fredoka_one"
+                android:text="Comenzar"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/contenedor_Pistas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="5dp">
+                <ProgressBar
+                    android:id="@+id/Barra_de_tiempo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminateTint="#FFD740"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_marginHorizontal="20dp"/>
+
+                <TextView
+                    android:id="@+id/txt_Pistas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="-6dp"
+                    android:background="@drawable/custom_button"
+                    android:fontFamily="@font/fredoka_one"
+                    android:padding="15dp"
+                    android:text="Pistas sobre los peronajes"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:stretchColumns="2"
+                    android:padding="16dp">
+
+                    <TableRow>
+
+                        <ImageView
+                            android:id="@+id/Carta1"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta2"
+                            android:src="@drawable/carta_stitch"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta3"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta4"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta5"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta6"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta7"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta8"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta9"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta10"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta11"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta12"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta13"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta14"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta15"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta16"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta17"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta18"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta19"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta20"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta21"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginTop="5dp">
+                        <ImageView
+                            android:id="@+id/Carta22"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta23"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+
+                        <ImageView
+                            android:id="@+id/Carta24"
+                            android:src="@drawable/carta_ariel"
+                            android:layout_width="127dp"
+                            android:layout_height="147dp"/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/anim_win"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        />
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:id="@+id/contenedor_Victoria"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/fredoka_one"
+            android:text="Victoria"
+            android:textColor="#FFFF00"
+            android:textSize="48sp" />
+        <TableLayout
+            android:background="@drawable/borde"
+            android:padding="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow>
+                <ImageView
+                    android:id="@+id/img_carta_maestra"
+                    android:layout_height="180dp"
+                    android:layout_width="150dp"
+                    android:src="@drawable/carta_stitch"
+                    />
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fredoka_one"
+                        android:text="Acertaste el personaje es:"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/txt_nombre_final"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fredoka_one"
+                        android:text="Stitch"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fredoka_one"
+                        android:text="Tu puntuacion es:"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/txt_puntuacion_final"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fredoka_one"
+                        android:text="1500"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/anim_bien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true" />
+
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="20dp">
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_menuprincipal"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/boton_azul"
+                    android:fontFamily="@font/fredoka_one"
+                    android:onClick="reintentar"
+                    android:text="Volver a Jugar"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_volverajugar"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/boton_azul"
+                    android:fontFamily="@font/fredoka_one"
+                    android:onClick="Regresarvictoria"
+                    android:text="Menu Principal "
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

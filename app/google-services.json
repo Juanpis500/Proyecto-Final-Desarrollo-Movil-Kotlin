@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "86829375115",
+    "project_id": "proyecto-final-adivina-quien",
+    "storage_bucket": "proyecto-final-adivina-quien.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86829375115:android:0988330d371ef3713c3e8e",
+        "android_client_info": {
+          "package_name": "com.example.proyectofinal_adivinaquien"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86829375115-9rk8l44opkusf0u9j1eas41e4v122r9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4HTF_tHJadE0JakjhmiI8Urj3a0Xq1_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86829375115-9rk8l44opkusf0u9j1eas41e4v122r9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
